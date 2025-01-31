@@ -1,0 +1,183 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="recipe-detail">
+    <h1 class="recipe-title">{{ object.name }}</h1>
+
+    <div class="recipe-image">
+        <img src="{{ object.image.url }}" alt="{{ object.name }}">
+    </div>
+
+    <p class="recipe-description">{{ object.description }}</p>
+
+    <div class="recipe-instructions">
+        <h2>Recipe:</h2>
+        <p>{{ object.recipe }}</p>
+    </div>
+    <div class="comments-section">
+        <h2>Comments:</h2>
+      
+        <form action="{% url 'new_comment' %}" method="post" class="comment-form">
+            {% csrf_token %}
+            <textarea name="content" placeholder="Write your comment here..." required></textarea>
+            <button type="submit" class="btn-submit">Add Comment</button>
+        </form>
+    </div>
+    
+    </div>
+
+    <div class="recipe-actions">
+     {% if object.id and object.pk %}
+    <a href="{% url 'update_post' object.id %}" class="btn-edit">Edit Post</a>
+    <a href="{% url 'delete_post' object.id %}" class="btn-delete">Delete Post</a>
+{% endif %}
+
+    </div>
+</div>
+
+
+<style>
+    .recipe-detail {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .recipe-title {
+        font-size: 2.5rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .recipe-image img {
+        width: 300px;
+        height:auto;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .recipe-description {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .recipe-instructions {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    
+    .recipe-instructions h2 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .recipe-instructions p {
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.6;
+    }
+
+    .comments-section {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .comments-section h2 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    .comment-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .comment-item {
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .comment-content {
+        font-size: 1rem;
+        color: #333;
+        margin: 0;
+    }
+    
+    .comment-date {
+        font-size: 0.9rem;
+        color: #777;
+    }
+    
+   
+    .comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        resize: vertical;
+    }
+    
+    .comment-form .btn-submit {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    .comment-form .btn-submit:hover {
+        background-color: #218838;
+    }
+    
+
+    .recipe-actions {
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .recipe-actions a {
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+    
+    .btn-edit {
+        background-color: #007bff;
+        color: white;
+    }
+    
+    .btn-edit:hover {
+        background-color: #0056b3;
+    }
+    
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+    }
+    
+    .btn-delete:hover {
+        background-color: #c82333;
+    }</style>
+{% endblock %}

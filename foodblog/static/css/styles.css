@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F8F3E6;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #b7894b;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #f9f5f0;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #F4E1C1;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 120px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #6A4E23;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.post-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-box {
+    flex: 1;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.post-image {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+.description-box {
+    flex: 2;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.description-box a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.description-box a:hover {
+    text-decoration: underline;
+}
+
+.box-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: left;
+    border: 2px solid red;
+}
+
+.box-container h2 {
+    font-size: 1.5rem;
+    color: #6A4E23;
+    margin: 0 0 10px;
+    padding: 10px;
+    background-color: #e4d9c5;
+    border-radius: 5px;
+}
+
+.box-container p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}

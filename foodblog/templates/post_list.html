@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Posts</h1>
+<ul>
+    {% for post in posts %}
+    <li class="post-item">
+        <div class="recipe-box">
+            <h2>{{ post.name }}</h2>
+            <img src="{{ post.image.url }}" alt="{{ post.name }}" class="post-image">
+        </div>
+        <div class="description-box">
+            <p>{{ post.description|truncatechars:100 }}</p>
+            <a href="{% url 'post_detail' post.id %}">Read More</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
